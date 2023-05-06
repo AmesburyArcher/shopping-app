@@ -1,0 +1,11 @@
+[
+  {
+    "id": 0,
+    "make": "Ford",
+    "model": "Mustang",
+    "product_type": "Car",
+    "price": "$49,999",
+    "image": "someImg.png",
+    "info": "some info text"
+  }
+]
