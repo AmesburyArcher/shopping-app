@@ -25,7 +25,7 @@ html {
   padding: 2rem;
 }
 
-.nav__bar > h1 {
+.nav__bar h1 {
   color: white;
   font-size: 4rem;
 }

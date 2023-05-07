@@ -14,9 +14,11 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/item/:id" element={<ItemPage />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
-        <Route path="/catalogue" element={<Catalogue />} />
+        <Route path="/catalogue">
+          <Route index element={<Catalogue />} />
+          <Route path="item/:id" element={<ItemPage />} />
+        </Route>
       </Routes>
     </div>
   );
