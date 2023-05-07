@@ -18,7 +18,7 @@ const Catalogue = function () {
   return (
     <div className="catalogue__container">
       <h1>Collection</h1>
-      <ul>{list}</ul>
+      <ul className="item__list">{list}</ul>
     </div>
   );
 };

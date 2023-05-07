@@ -10,14 +10,15 @@ import Nav from "./components/navBar";
 import ItemPage from "./components/itemPage";
 
 function App() {
+  const [total, editTotal] = useState(0);
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/shopping-cart" element={<ShoppingCart />} />
+        <Route path="/shopping-cart" element={<ShoppingCart total={total} />} />
         <Route path="/catalogue">
-          <Route index element={<Catalogue />} />
-          <Route path="item/:id" element={<ItemPage />} />
+          <Route index element={<Catalogue editTotal={editTotal} />} />
+          <Route path="item/:id" element={<ItemPage editTotal={editTotal} />} />
         </Route>
       </Routes>
     </div>
