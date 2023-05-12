@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import ItemJSON from "../assets/catalogue.json";
 import { useParams } from "react-router-dom";
 
-const ItemPage = function ({ editTotal }) {
+const ItemPage = function ({ editTotal, editCart, cart }) {
   const [quantity, editQuantity] = useState(1);
 
   const { id } = useParams();
@@ -20,6 +20,30 @@ const ItemPage = function ({ editTotal }) {
       }
       editQuantity((q) => q - 1);
     }
+  };
+
+  const addToCart = function () {
+    if (!cart.some((target) => target.id == item.id)) createCartItem();
+    else {
+      const newItem = cart.find((target) => target.id == item.id);
+      const newArr = cart.filter((target) => target.id != item.id);
+
+      const newQuantity = +newItem.quantity + quantity;
+      newItem.quantity = newQuantity;
+      editCart([...newArr, newItem]);
+    }
+  };
+
+  const createCartItem = function () {
+    const cartItem = {
+      name: item.make + " " + item.model,
+      img: item.img,
+      price: item.price,
+      id: item.id,
+      quantity: quantity,
+    };
+
+    editCart([...cart, cartItem]);
   };
 
   return (
@@ -66,6 +90,7 @@ const ItemPage = function ({ editTotal }) {
               (total) =>
                 total + Number(item.price.slice(1).replace(",", "") * quantity)
             );
+            addToCart();
             editQuantity(0);
           }}
         >
