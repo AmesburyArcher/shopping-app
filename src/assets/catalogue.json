@@ -7,5 +7,41 @@
     "price": "$49,999",
     "image": "someImg.png",
     "info": "some info text"
+  },
+  {
+    "id": 1,
+    "make": "Chevy",
+    "model": "Corvette",
+    "product_type": "Car",
+    "price": "$129,999",
+    "image": "someImg.png",
+    "info": "some info text"
+  },
+  {
+    "id": 2,
+    "make": "Dodge",
+    "model": "Challenger",
+    "product_type": "Car",
+    "price": "$89,999",
+    "image": "someImg.png",
+    "info": "some info text"
+  },
+  {
+    "id": 3,
+    "make": "Volkswagen",
+    "model": "Golf R",
+    "product_type": "Car",
+    "price": "$49,999",
+    "image": "someImg.png",
+    "info": "some info text"
+  },
+  {
+    "id": 4,
+    "make": "BMW",
+    "model": "M5",
+    "product_type": "Car",
+    "price": "$119,999",
+    "image": "someImg.png",
+    "info": "some info text"
   }
 ]

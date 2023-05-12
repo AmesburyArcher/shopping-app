@@ -66,6 +66,7 @@ const ItemPage = function ({ editTotal }) {
               (total) =>
                 total + Number(item.price.slice(1).replace(",", "") * quantity)
             );
+            editQuantity(0);
           }}
         >
           Add To Cart
