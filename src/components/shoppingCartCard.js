@@ -2,19 +2,15 @@ import React, { useState } from "react";
 
 const CartCard = function ({ item, editCart, cart, editTotal }) {
   const [quantity, editQuantity] = useState(+item.quantity);
-  const [itemCard, editItemCard] = useState({}); // HERE IS WHERE LEFT
 
   const adjustQuantity = function (type) {
-    const newItem = cart.find((i) => i.id == item.id);
-    let newQuantity;
-    const newCart = cart.filter((i) => i.id != item.id);
-
     if (type === "-") {
       editQuantity((q) => q - 1);
       editTotal(
         (total) => Number(total) - Number(item.price.slice(1).replace(",", ""))
       );
-      if (newQuantity <= 0) {
+      if (quantity <= 0) {
+        const newCart = cart.filter((i) => i.id != item.id);
         editCart(newCart);
         return;
       }
@@ -24,8 +20,19 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
         (total) => Number(total) + Number(item.price.slice(1).replace(",", ""))
       );
     }
-    newItem.quantity = quantity;
-    editCart([...newCart, newItem]);
+
+    editCart(
+      cart.map((i) => {
+        if (i.id == item.id) {
+          return {
+            ...i,
+            quantity: quantity,
+          };
+        } else {
+          return i;
+        }
+      })
+    );
   };
 
   return quantity > 0 ? (
