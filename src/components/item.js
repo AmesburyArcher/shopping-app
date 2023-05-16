@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Item = function ({ id, make, model, product_type, price, img }) {
+  console.log(img);
   return (
     <li id={id} className="item__card">
-      <img src={img} />
+      <img src={img} className="item__image" alt={make + " " + model} />
       <Link to={`item/${id}`}>
         <h2 className="item__make">{make}</h2>
       </Link>

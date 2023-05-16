@@ -53,6 +53,11 @@ html {
   width: 100%;
 }
 
+.item__image {
+  height: 200px;
+  width: 350px;
+}
+
 .item__card {
   border: 1px solid black;
   display: flex;

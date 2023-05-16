@@ -8,8 +8,6 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
   const { id } = useParams();
   const item = ItemJSON.find((i) => i.id == id);
 
-  const inputRef = useRef(null);
-
   const changeQuantity = function (type) {
     if (type === "+") {
       editQuantity((q) => q + 1);
@@ -45,10 +43,15 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
 
     editCart([...cart, cartItem]);
   };
+  console.log(item.img);
 
   return (
     <div className="item__page__container">
-      <img src={item.img} />
+      <img
+        src={item.img}
+        className="item__page__image"
+        alt={item.make + " " + item.model}
+      />
       <h1 className="item__page__make">{item.make}</h1>
       <h2 className="item__page__model">{item.model}</h2>
 

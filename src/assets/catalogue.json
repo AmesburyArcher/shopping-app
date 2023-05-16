@@ -5,7 +5,7 @@
     "model": "Mustang",
     "product_type": "Car",
     "price": "$49,999",
-    "image": "someImg.png",
+    "img": "/images/Ford-Mustang.jpeg",
     "info": "some info text"
   },
   {
@@ -14,7 +14,7 @@
     "model": "Corvette",
     "product_type": "Car",
     "price": "$129,999",
-    "image": "someImg.png",
+    "img": "/images/Chevy-Corvette.jpeg",
     "info": "some info text"
   },
   {
@@ -23,7 +23,7 @@
     "model": "Challenger",
     "product_type": "Car",
     "price": "$89,999",
-    "image": "someImg.png",
+    "img": "/images/Dodge-Challenger.jpeg",
     "info": "some info text"
   },
   {
@@ -32,7 +32,7 @@
     "model": "Golf R",
     "product_type": "Car",
     "price": "$49,999",
-    "image": "someImg.png",
+    "img": "/images/Volkswagen-Golf_R.jpeg",
     "info": "some info text"
   },
   {
@@ -41,7 +41,7 @@
     "model": "M5",
     "product_type": "Car",
     "price": "$119,999",
-    "image": "someImg.png",
+    "img": "/images/BMW-M5.jpeg",
     "info": "some info text"
   }
 ]
