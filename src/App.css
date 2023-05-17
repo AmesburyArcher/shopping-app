@@ -11,11 +11,21 @@ html {
   padding: 0;
 }
 
+a:is(:hover, :focus) li {
+  color: #eee;
+}
+
 :root {
   --colour--dark: #28262b;
   --colour--dark--secondary: #333333;
   --colour--light: #d5ccc7;
   --colour--light--secondary: #a9a29c;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: var(--colour--light--secondary);
+  color: white;
 }
 
 .nav__bar {
@@ -46,32 +56,33 @@ html {
   text-decoration: none;
 }
 
-.item__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  list-style: none;
-  width: 100%;
-}
-
-.item__image {
-  height: 200px;
-  width: 350px;
-}
-
-.item__card {
-  border: 1px solid black;
+/* Shopping Cart */
+.shopping__cart__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
+}
+
+.shopping__total {
   font-size: 2rem;
 }
 
-/* Shopping Cart */
-.shopping__total {
-  font-size: 2rem;
+.shopping__cart__card__container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cart__card__image {
+  width: 25vw;
 }
 
 /* Catalogue */
@@ -87,6 +98,47 @@ html {
   font-weight: bold;
 }
 
+.catalogue__container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.catalogue__container a:is(:hover) {
+  cursor: pointer;
+}
+
+.item__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  gap: 2rem;
+  width: 100%;
+}
+
+.item__image {
+  height: 200px;
+  width: 350px;
+
+  border-radius: 1.6rem;
+}
+
+.item__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* Item page */
 .item__page__container {
   display: flex;
@@ -94,6 +146,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .item__quantity__container {
@@ -101,4 +154,8 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.item__page__image {
+  width: 75vw;
 }

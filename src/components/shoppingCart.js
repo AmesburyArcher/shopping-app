@@ -18,10 +18,11 @@ const ShoppingCart = function ({ total, cart, editCart, editTotal }) {
   ));
 
   return (
-    <>
+    <div className="shopping__cart__container">
+      <h1 className="shopping__cart__title">Shopping Cart</h1>
       <div className="shopping__total">{CADDollar.format(total)}</div>
-      <ul>{items}</ul>
-    </>
+      <ul className="shopping__cart__list">{items}</ul>
+    </div>
   );
 };
 

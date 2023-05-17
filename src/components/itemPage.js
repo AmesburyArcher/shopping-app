@@ -23,12 +23,18 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
   const addToCart = function () {
     if (!cart.some((target) => target.id == item.id)) createCartItem();
     else {
-      const newItem = cart.find((target) => target.id == item.id);
-      const newArr = cart.filter((target) => target.id != item.id);
-
-      const newQuantity = +newItem.quantity + quantity;
-      newItem.quantity = newQuantity;
-      editCart([...newArr, newItem]);
+      editCart(
+        cart.map((i) => {
+          if (i.id == item.id) {
+            return {
+              ...i,
+              quantity: i.quantity + quantity,
+            };
+          } else {
+            return i;
+          }
+        })
+      );
     }
   };
 
@@ -43,7 +49,6 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
 
     editCart([...cart, cartItem]);
   };
-  console.log(item.img);
 
   return (
     <div className="item__page__container">
