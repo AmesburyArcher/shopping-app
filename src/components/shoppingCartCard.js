@@ -5,7 +5,7 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
 
   const adjustQuantity = function (type) {
     if (type === "-") {
-      editQuantity(quantity - 1);
+      editQuantity((q) => q - 1);
       editTotal(
         (total) => Number(total) - Number(item.price.slice(1).replace(",", ""))
       );
@@ -15,7 +15,7 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
         return;
       }
     } else {
-      editQuantity(quantity + 1);
+      editQuantity((q) => q + 1);
       editTotal(
         (total) => Number(total) + Number(item.price.slice(1).replace(",", ""))
       );
