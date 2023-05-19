@@ -36,6 +36,16 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
     );
   };
 
+  const deleteFromCart = function () {
+    // const quantity = item.quantity;
+    editCart(cart.filter((i) => i.id != item.id));
+    editTotal(
+      (total) =>
+        total -
+        Number(item.quantity) * Number(item.price.slice(1).replace(",", ""))
+    );
+  };
+
   return quantity > 0 ? (
     <li className="shopping__cart__card__container">
       <h2 className="cart__card__name">{item.name}</h2>
@@ -47,6 +57,7 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
         onClick={function () {
           adjustQuantity("+");
         }}
+        type="button"
       >
         Add
       </button>
@@ -55,10 +66,17 @@ const CartCard = function ({ item, editCart, cart, editTotal }) {
         onClick={function () {
           adjustQuantity("-");
         }}
+        type="button"
       >
         Remove
       </button>
-      <button className="cart__card__trash__button" type="button">
+      <button
+        className="cart__card__trash__button"
+        onClick={function () {
+          deleteFromCart();
+        }}
+        type="button"
+      >
         Trash
       </button>
     </li>
