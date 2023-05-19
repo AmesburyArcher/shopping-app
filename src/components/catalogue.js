@@ -2,7 +2,7 @@ import React from "react";
 import ItemsJSON from "../assets/catalogue.json";
 import Item from "./item";
 
-const Catalogue = function () {
+const Catalogue = function ({ total, editTotal, cart, editCart }) {
   const list = ItemsJSON.map((item) => (
     <Item
       key={item.id}
@@ -12,6 +12,10 @@ const Catalogue = function () {
       price={item.price}
       product_type={item.product_type}
       img={item.img}
+      cart={cart}
+      editCart={editCart}
+      total={total}
+      editTotal={editTotal}
     />
   ));
 

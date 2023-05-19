@@ -57,14 +57,12 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
         className="item__page__image"
         alt={item.make + " " + item.model}
       />
-      <h1 className="item__page__make">{item.make}</h1>
-      <h2 className="item__page__model">{item.model}</h2>
+      <h1 className="item__page__make">
+        {item.make} {item.model}
+      </h1>
 
       <div className="item__page__price">{item.price}</div>
-      <p className="item__page__info">
-        {item.info}
-        {quantity}
-      </p>
+      <p className="item__page__info">{item.info}</p>
       <div className="item__quantity__container">
         <div className="item__increment__container">
           <button
@@ -72,7 +70,21 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
               changeQuantity("-");
             }}
           >
-            -
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-minus"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12l14 0"></path>
+            </svg>
           </button>
           <input
             type="number"
@@ -87,7 +99,22 @@ const ItemPage = function ({ editTotal, editCart, cart }) {
               changeQuantity("+");
             }}
           >
-            +
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-plus"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 5l0 14"></path>
+              <path d="M5 12l14 0"></path>
+            </svg>
           </button>
         </div>
         <button

@@ -28,7 +28,17 @@ function App() {
           }
         />
         <Route path="/catalogue">
-          <Route index element={<Catalogue editTotal={editTotal} />} />
+          <Route
+            index
+            element={
+              <Catalogue
+                cart={cart}
+                editCart={editCart}
+                total={total}
+                editTotal={editTotal}
+              />
+            }
+          />
           <Route
             path="item/:id"
             element={
